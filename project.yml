@@ -1,0 +1,43 @@
+name: SampleApp
+options:
+  xcodeVersion: "12.0"
+  deploymentTarget:
+    iOS:  "13.0"
+  developmentLanguage: en
+
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+
+targets:
+  SampleApp:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_NAME: $TARGET_NAME
+        PRODUCT_BUNDLE_IDENTIFIER: com.github.droibit.sample.${PRODUCT_NAME}
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        ENABLE_PREVIEWS: true
+        DEVELOPMENT_ASSET_PATHS: "\"Sources/Resources/Preview Content\""
+    sources:
+      - path: Sources
+    # dependencies:
+    #   - carthage: XXX
+
+schemes:
+  SampleApp:
+    build:
+      targets:
+        SampleApp: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile: 
+      config: Debug
+    analyze:
+      config: Debug
+    archive: 
+      config: Debug      
