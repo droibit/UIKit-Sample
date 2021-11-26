@@ -1,9 +1,10 @@
 name: SampleApp
 options:
-  xcodeVersion: "12.0"
+  xcodeVersion: "13.0"
   deploymentTarget:
-    iOS:  "13.0"
+    iOS:  "14.0"
   developmentLanguage: en
+#  postGenCommand: rbenv exec bundle exec pod install
 
 settings:
   base:
