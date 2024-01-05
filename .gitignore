@@ -81,7 +81,3 @@ iOSInjectionProject/
 
 # AppCode
 .idea/
-
-# XcodeGen
-*.xcworkspace
-*.xcodeproj
