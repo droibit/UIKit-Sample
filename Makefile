@@ -1,3 +1,5 @@
+PROJECT_NAME := UIKitSample
+
 .PHONY: bootstrap
 bootstrap:
 	mint bootstrap
@@ -5,7 +7,12 @@ bootstrap:
 
 .PHONY: generate-project
 generate-project:
+	find . -name "project.yml" -or -name "Package.swift" | xargs sed -i "" "s/UIKitSample/$(PROJECT_NAME)/g"
 	mint run xcodegen xcodegen generate --project ./App
+
+.PHONY: open-project
+open-project:	
+	open ./App/$(PROJECT_NAME).xcodeproj
 
 .PHONY: format
 format:
