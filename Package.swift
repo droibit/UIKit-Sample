@@ -43,5 +43,12 @@ let package = Package(
         //     name: "AppTests",
         //     dependencies: ["App"]
         // ),
+        // .target(
+        //     name: "Mocks",
+        //     dependencies: [
+        //     ],
+        //     path: "./Tests/Mocks",
+        //     exclude: [".gitkeep"]
+        // ),
     ]
 )

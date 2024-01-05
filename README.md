@@ -18,6 +18,6 @@ Next, run the following commands to generate the project for the sample app.
 
 ```bash
 make bootstrap
-make generate-project
+make gen-project
 make open-project
 ```

@@ -5,7 +5,7 @@ bootstrap:
 	mint bootstrap
 	cp -pR .githooks/* .git/hooks
 
-.PHONY: generate-project
+.PHONY: gen-project
 generate-project:
 	find . -name "project.yml" -or -name "Package.swift" | xargs sed -i "" "s/UIKitSample/$(PROJECT_NAME)/g"
 	mint run xcodegen xcodegen generate --project ./App
@@ -13,6 +13,10 @@ generate-project:
 .PHONY: open-project
 open-project:	
 	open ./App/$(PROJECT_NAME).xcodeproj
+
+.PHONY: gen-mocks
+open-project:	
+	./scripts/gen-mocks.sh
 
 .PHONY: format
 format:
