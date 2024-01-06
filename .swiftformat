@@ -1,6 +1,6 @@
 # file options
 
---exclude Carthage,Pods,Sources/Mocks
+--exclude Carthage,Pods,Tests/Mocks
 
 # format options
 --allman false

@@ -1,4 +1,4 @@
-name: UIKitSample
+name: SampleApp
 options:
   xcodeVersion: "15.0"
   deploymentTarget:
@@ -10,11 +10,11 @@ settings:
     SWIFT_VERSION: 5.0
 
 packages:
-  UIKitSample:
+  SampleApp:
     path: .
 
 targets:
-  UIKitSample:
+  SampleApp:
     type: application
     platform: iOS
     settings:
@@ -40,7 +40,7 @@ targets:
     sources:
       - path: ./App/iOS
     dependencies:
-      - package: UIKitSample
+      - package: SampleApp
         products:
           - App
     postBuildScripts:
@@ -52,10 +52,10 @@ targets:
           make lint
 
 schemes:
-  UIKitSample:
+  SampleApp:
     build:
       targets:
-        UIKitSample: all
+        SampleApp: all
     run:
       config: Debug
     test:
