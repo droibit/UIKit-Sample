@@ -11,7 +11,7 @@ settings:
 
 packages:
   SampleApp:
-    path: .
+    path: ../
 
 targets:
   SampleApp:
@@ -38,7 +38,7 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
     sources:
-      - path: ./App/iOS
+      - path: ./iOS
     dependencies:
       - package: SampleApp
         products:
