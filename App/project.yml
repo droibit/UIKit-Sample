@@ -1,13 +1,13 @@
 name: SampleApp
 options:
-  xcodeVersion: "15.0"
+  xcodeVersion: "16.0"
   deploymentTarget:
     iOS: "17.0"
   developmentLanguage: en
 
 settings:
   base:
-    SWIFT_VERSION: 5.0
+    SWIFT_VERSION: 6.0
 
 packages:
   SampleApp:
@@ -58,6 +58,8 @@ schemes:
         SampleApp: all
     run:
       config: Debug
+      environmentVariables:
+        IDEPreferLogStreaming: YES      
     test:
       config: Debug
     profile: 
