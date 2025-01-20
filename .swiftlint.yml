@@ -10,7 +10,7 @@ opt_in_rules:
   # - accessibility_trait_for_button
   - anonymous_argument_in_multiline_closure
   - array_init
-  # - async_without_await
+  - async_without_await
   - attributes
   - balanced_xctest_lifecycle  
   - closure_body_length
@@ -135,7 +135,7 @@ opt_in_rules:
   - unavailable_function
   - unhandled_throwing_task
   - unneeded_parentheses_in_closure_argument
-# - unowned_variable_capture  
+  # - unowned_variable_capture  
   - untyped_error_in_catch
   # - unused_capture_list
   # - unused_parameter
