@@ -1,8 +1,21 @@
 #!/bin/sh
 
-if ! which mint >/dev/null; then
-  echo "warning: Mint not installed, download from https://github.com/yonaskolb/Mint"
+# Skip for indexing
+if [ "${ACTION}" == "indexbuild" ]; then
+  echo "Not running SwiftLint during indexing."
+  exit 0 
+fi
+
+# Skip for preview builds
+if [ "${ENABLE_PREVIEWS}" = "YES" ]; then
+  echo "Not running SwiftLint during preview builds."
   exit 0
+fi
+
+if ! type "mint" > /dev/null; then
+  # Adds support for Apple Silicon brew directory
+  # ref. https://stackoverflow.com/a/66003612
+  export PATH="$PATH:/opt/homebrew/bin"
 fi
 
 PROJECT_GIT_DIR=$1
