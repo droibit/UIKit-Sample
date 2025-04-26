@@ -9,7 +9,7 @@
 --elseposition same-line
 --header ignore
 --ifdef indent
---indent 4
+--indent 2
 --importgrouping testable-bottom
 --linebreaks lf
 --maxwidth 200
