@@ -1,5 +1,5 @@
-// swift-tools-version: 5.10
-import PackageDescription
+// swift-tools-version: 6.0
+@preconcurrency import PackageDescription
 
 private extension PackageDescription.Target.Dependency {
   // static let factory: Self = .product(name: "Factory", package: "Factory")
@@ -7,6 +7,12 @@ private extension PackageDescription.Target.Dependency {
 
 private extension PackageDescription.Target.PluginUsage {
   // static let swiftGen: Self = .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
+}
+
+// ref. https://github.com/treastrain/swift-upcomingfeatureflags-cheatsheet
+extension SwiftSetting {
+  static let existentialAny: Self = .enableUpcomingFeature("ExistentialAny") // SE-0335, Swift 5.6,  SwiftPM 5.8+
+  static let internalImportsByDefault: Self = .enableUpcomingFeature("InternalImportsByDefault") // SE-0409, Swift 6.0,  SwiftPM 6.0+
 }
 
 let debugOtherSwiftFlags = [
@@ -52,3 +58,11 @@ let package = Package(
     // ),
   ]
 )
+
+for target in package.targets {
+  target.swiftSettings = [
+    .unsafeFlags(debugOtherSwiftFlags, .when(configuration: .debug)),
+    .existentialAny,
+    .internalImportsByDefault,
+  ]
+}

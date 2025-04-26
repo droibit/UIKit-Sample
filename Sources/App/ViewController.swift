@@ -1,4 +1,4 @@
-import UIKit
+public import UIKit
 
 public class ViewController: UIViewController {
   override public func viewDidLoad() {

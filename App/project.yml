@@ -11,7 +11,7 @@ settings:
 
 packages:
   SampleApp:
-    path: ../
+    path: ..
 
 targets:
   SampleApp:
@@ -28,7 +28,7 @@ targets:
         ENABLE_USER_SCRIPT_SANDBOXING: false
         INFOPLIST_KEY_CFBundleDisplayName: ${PRODUCT_NAME}
         INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
-        INFOPLIST_KEY_UISupportedInterfaceOrientations:        
+        INFOPLIST_KEY_UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
@@ -59,12 +59,12 @@ schemes:
     run:
       config: Debug
       environmentVariables:
-        IDEPreferLogStreaming: YES      
+        IDEPreferLogStreaming: YES
     test:
       config: Debug
-    profile: 
+    profile:
       config: Debug
     analyze:
       config: Debug
-    archive: 
+    archive:
       config: Debug
