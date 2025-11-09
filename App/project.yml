@@ -27,6 +27,7 @@ targets:
         ENABLE_PREVIEWS: true
         GENERATE_INFOPLIST_FILE: true
         ENABLE_USER_SCRIPT_SANDBOXING: false
+        INFOPLIST_FILE: iOS/Resources/Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: ${PRODUCT_NAME}
         INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
         INFOPLIST_KEY_UISupportedInterfaceOrientations:

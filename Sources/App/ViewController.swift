@@ -1,6 +1,6 @@
 public import UIKit
 
-public class ViewController: UIViewController {
+public final class ViewController: UIViewController {
   override public func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
