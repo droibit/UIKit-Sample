@@ -4,7 +4,7 @@ This repository is a UIKit-based sample iOS app. Use these instructions to guide
 
 ## Environment & compatibility
 
-- Xcode: 16 or later
+- Xcode: 26 or later
 - iOS deployment target: 18.0 or later
 - Target Swift language level: Swift 6.0 or newer features are allowed and preferred.
 
@@ -15,14 +15,14 @@ This repository is a UIKit-based sample iOS app. Use these instructions to guide
 
 ## Dependencies
 
-- Manage dependencies with Swift Package Manager. If a change requires adding a package, update [Package.swift](../Package.swift) and explain why the dependency is necessary.
+- Manage dependencies with Swift Package Manager. If a change requires adding a package, update root `Package.swift` and explain why the dependency is necessary.
 
 ## Coding style & tooling
 
 Follow the repository's style configuration when producing code:
 
 - [.editorconfig](../.editorconfig)
-- [.swiftlint.yml](../.swiftlint.yml) (SwiftLint rules)
-- [.swiftformat](../.swiftformat) (SwiftFormat rules)
+- .swiftlint.yml (SwiftLint rules)
+- .swiftformat (SwiftFormat rules)
 
 Keep generated code consistent with those rules: indentation, line length, naming, import ordering. Make minimal formatting changes and avoid reformatting unrelated files.
