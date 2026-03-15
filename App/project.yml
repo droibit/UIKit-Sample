@@ -69,4 +69,4 @@ schemes:
     analyze:
       config: Debug
     archive:
-      config: Debug
+      config: Release
