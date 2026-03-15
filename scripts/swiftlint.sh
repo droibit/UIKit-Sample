@@ -1,33 +1,31 @@
 #!/bin/sh
 
-# Skip for indexing
-if [ "${ACTION}" == "indexbuild" ]; then
-  echo "Not running SwiftLint during indexing."
-  exit 0 
-fi
-
-# Skip for preview builds
-if [ "${ENABLE_PREVIEWS}" = "YES" ]; then
-  echo "Not running SwiftLint during preview builds."
+if ! which mint >/dev/null; then
+  echo "warning: Mint not installed, download from https://github.com/yonaskolb/Mint"
   exit 0
 fi
 
-if ! type "mint" > /dev/null; then
-  # Adds support for Apple Silicon brew directory
-  # ref. https://stackoverflow.com/a/66003612
-  export PATH="$PATH:/opt/homebrew/bin"
-fi
-
-PROJECT_GIT_DIR=$1
 START_DATE=$(date +"%s")
 
+RUN_ALL=false
+for arg in "$@"; do
+  if [ "$arg" = "--all" ]; then
+    RUN_ALL=true
+  fi
+done
+
 run_lint() {
-  local filepath=$(readlink -f "${PROJECT_GIT_DIR}/${1}")
-  xcrun --sdk macosx mint run swiftlint swiftlint "${filepath}"
+  local filepath=$(readlink -f "${1}")
+  xcrun --sdk macosx mint run swiftlint swiftlint "${filepath}" --strict
 }
 
-git diff --diff-filter=d --name-only -- "*.swift" | while read filename; do run_lint "${filename}"; done
-git diff --cached --diff-filter=d --name-only -- "*.swift" | while read filename; do run_lint "${filename}"; done
+if [ "$RUN_ALL" = true ]; then
+  project_path=$(readlink -f ".")
+  xcrun --sdk macosx mint run swiftlint swiftlint "${project_path}" --strict
+else
+  git diff --diff-filter=d --name-only -- "*.swift" | while read filename; do run_lint "${filename}"; done
+  git diff --cached --diff-filter=d --name-only -- "*.swift" | while read filename; do run_lint "${filename}"; done
+fi
 
 END_DATE=$(date +"%s")
 
